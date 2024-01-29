@@ -331,6 +331,7 @@ button {
 .logo {
     width: 250px;
     height: auto;
+    margin-left: 100px;
 }
 
 /* header section end */
@@ -385,7 +386,7 @@ button {
 }
 
 .read_bt a:hover {
-    color: #ffffff;
+    color: #50504f;
     background-color: #f5ddb6;
 }
 
@@ -427,17 +428,35 @@ button {
 }
 
 .product_box {
+    position: relative;
+    overflow: hidden;
     width: 100%;
     background-color: #ffffff;
-    height: auto;
     border: 1px solid #7d7d7c;
-    padding: 20px 0px 0px 0px;
     margin-top: 30px;
     transition: transform 0.3s ease-in-out;
 }
 
 .product_box:hover {
     transform: scale(1.05);
+}
+
+.product-description {
+    background-color: rgba(0,0,0,0.75);
+    color: #f5eddb;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+    transform: translateY(100%);
+}
+
+.product_box:hover .product-description {
+    transform: translateY(0);
 }
 
 .bursh_text {
@@ -523,7 +542,7 @@ button {
 }
 
 .seemore_bt a:hover {
-    color: #ffffff;
+    color: #50504f;
     background-color: #f5ddb6;
 }
 
@@ -536,7 +555,7 @@ button {
 .about_section {
     width: 100%;
     float: left;
-    background-color: #fef4ec;
+    background-image: url(../images/banner-bg.png);
     height: auto;
     padding-bottom: 90px;
 }
@@ -576,6 +595,48 @@ button {
     height: 430px;
 }
 
+.picture-box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.picture-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.picture {
+    width: 100%;
+    height: auto;
+}
+
+.name-position {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 36px; /* Adjusted font size for name and position */
+    color: #333;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
 .readmore_bt {
     width: 170px;
     float: left;
@@ -587,7 +648,7 @@ button {
     float: left;
     font-size: 16px;
     color: #ffffff;
-    background-color: #363636;
+    background-color: #252525;
     text-align: center;
     padding: 10px 0px;
     border-radius: 5px;
@@ -597,7 +658,7 @@ button {
 
 .readmore_bt a:hover {
     color: #50504f;
-    background-color: #ffffff;
+    background-color: #fef4ec;
 }
 
 .mission_vision_section {
