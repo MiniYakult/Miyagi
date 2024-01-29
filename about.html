@@ -7,7 +7,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <title>MIYAGI - ABOUT US</title>
-         <link rel="icon" type="image/png" href="images/android-chrome-512x512.png">
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -41,7 +40,7 @@
                <form class="form-inline ">
                   <div class="login_text">
                      <ul>
-                        <li><a href="#"><img src="images/user-icon.png"></a></li>
+                        <li><a href="login.html"><img src="images/user-icon.png"></a></li>
                         <li><a href="#"><img src="images/bag-icon.png"></a></li>
                         <li><a href="#"><img src="images/search-icon.png"></a></li>
                      </ul>
@@ -51,6 +50,7 @@
          </div>
       </div>
       <!-- header section end -->
+
       <!-- about section start -->
       <div class="about_section layout_padding">
          <div class="container">
@@ -58,16 +58,25 @@
                <div class="row">
                   <div class="col-md-6">
                      <div class="about_taital_main">
-                        <h1 class="about_title">Where Tradition Meets Tomorrow</h1>
+                        <h1 class="about_title">Where Tradition Meets Tomorrow<br></h1>
                         <p class="about_text">Embrace the timeless allure of heritage fused with the cutting edge of contemporary style. 
                            Our collections are a harmonious blend of craftsmanship and innovation, honoring the past while embracing the possibilities of the future. 
                            At MIYAGI, we invite you to experience fashion that transcends time, where each garment tells a story of legacy and envisions the promise of tomorrow.</p>
-                        <div class="readmore_bt"><a href="#">Read More</a></div>
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div><img src="images/mygabout.png" class="image_3"></div>
-                  </div>
+                  <div class="picture-box">
+                     <div class="arrow arrow-left" onclick="changePicture(-1)">❮</div>
+                     <div class="picture-container">
+                         <img class="picture" src="images/mygfounder.png" alt="Founder - Alfie Nicolas">
+                         <img class="picture" src="images/mygcofounder1.png" alt="Co-Founder - Gian Villaceran">
+                         <img class="picture" src="images/mygcofounder2.png" alt="Co-Founder - Johann Esquejo">
+                     </div>
+                     <div class="arrow arrow-right" onclick="changePicture(1)">❯</div>
+                     <div class="name-position" id="namePosition">
+                        <p>Name: ALFIE NICOLAS</p>
+                        <p>Position: FOUNDER</p>
+                    </div>
+                 </div>
                </div>
             </div>
          </div>
@@ -97,6 +106,7 @@
          </div>
       </div>
       <!-- about section end -->
+
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -158,6 +168,7 @@
          </div>
       </div>
       <!-- footer section end -->
+
       <!-- copyright section start -->
       <div class="copyright_section">
          <div class="container">
@@ -186,6 +197,34 @@
          function closeNav() {
            document.getElementById("mySidenav").style.width = "0";
          }
+
+         let currentPicture = 0;
+            const pictures = document.querySelector('.picture-container');
+            const namePositionElement = document.getElementById('namePosition');
+
+            function changePicture(direction) {
+               currentPicture = (currentPicture + direction + pictures.childElementCount) % pictures.childElementCount;
+
+               pictures.style.transform = `translateX(${-currentPicture * 100}%)`;
+
+               if (currentPicture === 0) {
+                  namePositionElement.innerHTML = `
+                        <p>Name: ALFIE NICOLAS</p>
+                        <p>Position: FOUNDER</p>
+                  `;
+               } else if (currentPicture === 1) {
+                  namePositionElement.innerHTML = `
+                        <p>Name: GIAN VILLACERAN</p>
+                        <p>Position: CO-FOUNDER</p>
+                  `;
+               } else if (currentPicture === 2) {
+                  namePositionElement.innerHTML = `
+                        <p>Name: JOHANN ESQUEJO</p>
+                        <p>Position: CO-FOUNDER</p>
+                  `;
+               }
+         }
+
       </script> 
    </body>
 </html>
